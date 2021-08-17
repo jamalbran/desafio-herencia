@@ -1,4 +1,6 @@
 class Appointment
+  attr_reader :location, :purpose, :hour, :min
+
   def initialize(location, purpose, hour, min)
     @location = location
     @purpose = purpose
@@ -8,6 +10,8 @@ class Appointment
 end
 
 class MonthlyAppointment < Appointment
+  attr_reader :day
+
   def initialize(location, purpose, hour, min, day)
     super(location, purpose, hour, min)
     @day = day
@@ -33,6 +37,8 @@ class DailyAppointment < Appointment
 end
 
 class OneTimeAppointment < Appointment
+  attr_reader :day, :month, :year
+
   def initialize(location, purpose, hour, min, day, month, year)
     super(location, purpose, hour, min)
     @day = day
